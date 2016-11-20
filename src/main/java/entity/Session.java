@@ -1,5 +1,6 @@
 package entity;
 
+import java.security.SecureRandom;
 import java.sql.Date;
 import java.util.Calendar;
 
@@ -40,9 +41,15 @@ public class Session {
 	private Employee employee;
 	
 	public Session(Employee pEmployee ){
+		//Generate Token
+		SecureRandom random = new SecureRandom();
+		byte bytes[] = new byte[20];
+		random.nextBytes(bytes);
+		
 		this.dtLogin = Calendar.getInstance(); 
 		this.isActive = true;
 		this.employee = pEmployee;
+		this.token = bytes.toString();
 	}
 }
 
