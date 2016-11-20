@@ -27,6 +27,7 @@ public class Session {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "dt_login")
 	private Calendar dtLogin;
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "dt_last_action")
 	private Calendar dtLastAction;
@@ -51,6 +52,51 @@ public class Session {
 		this.employee = pEmployee;
 		this.token = bytes.toString();
 	}
+	
+	public float getIdSession() {
+		return idSession;
+	}
+
+	public Calendar getDtLogin() {
+		return dtLogin;
+	}
+
+	public void setDtLogin(Calendar dtLogin) {
+		this.dtLogin = dtLogin;
+	}
+
+	public Calendar getDtLastAction() {
+		return dtLastAction;
+	}
+
+	public void setDtLastAction(Calendar dtLastAction) {
+		this.dtLastAction = dtLastAction;
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+	
 }
 
 

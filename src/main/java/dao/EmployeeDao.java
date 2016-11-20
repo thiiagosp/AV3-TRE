@@ -17,6 +17,11 @@ public class EmployeeDao {
 	 * 
 	 * @param pEmployee
 	 * @author Guilherme gui_dutralves@hotmail.com
+	 * 
+	 * log alteração: 
+	 * <Name></Name>
+	 * <Date></Date>
+	 * <Description></Description>	
 	 */
 	public void insertNewEmploye(Employee pEmployee){
 		try{
@@ -37,6 +42,11 @@ public class EmployeeDao {
 	 * 
 	 * @param float pId
 	 * @author Guilherme gui_dutralves@hotmail.com
+	 * 
+	 * log alteração: 
+	 * <Name></Name>
+	 * <Date></Date>
+	 * <Description></Description>	
 	 */
 	public Employee getEmployeeById(float pId){
 		
@@ -67,6 +77,12 @@ public class EmployeeDao {
 	 * @param pCodeRegistration
 	 * @param pPassword
 	 * @return Employee (null)
+	 * @author Guilherme gui_dutralves@hotmail.com
+	 * 
+	 * log alteração: 
+	 * <Name></Name>
+	 * <Date></Date>
+	 * <Description></Description>	
 	 */
 	public Employee getEmployeeByCodeRegistrationAndPasword(String pCodeRegistration, String pPassword){
 		
@@ -86,10 +102,36 @@ public class EmployeeDao {
 			}
 
 		}catch(Exception e){
-			System.out.println("EmployeeDao -> getEmployeeWithId(float Id): " + e);
+			System.out.println("EmployeeDao -> getEmployeeByCodeRegistrationAndPasword(pCodeRegistration, pPassword): " + e);
 		}
 
 		return employee;
+	}
+	
+	
+	/** Portugues: Salva um Employee
+	 *  English:  Save a employee
+	 * 
+	 * @param pEmployee
+	 * @author Guilherme gui_dutralves@hotmail.com
+	 * 
+	 * log alteração: 
+	 * <Name></Name>
+	 * <Date></Date>
+	 * <Description></Description>				
+	 */
+	public void updateEmployee(Employee pEmployee){
+		try{
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("employee");
+			EntityManager manager = factory.createEntityManager();
+			
+			manager.getTransaction().begin(); 
+			manager.merge(pEmployee);
+			manager.getTransaction().commit();
+			
+		}catch(Exception e){
+			System.out.println("EmployeeDao -> updateEmployee(Employee): " + e);
+		}
 	}
 	
 	

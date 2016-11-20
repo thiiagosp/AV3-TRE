@@ -38,7 +38,21 @@ public class Employee {
 	private String codeRegistration;
 	@Column(name = "de_password")
 	private String dePassword;
+	@Column(name = "token")
+	private String token;
 	
+	public String getDePassword() {
+		return dePassword;
+	}
+	public void setDePassword(String dePassword) {
+		this.dePassword = dePassword;
+	}
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
+	}
 	@ManyToOne(cascade = CascadeType.ALL)
 	@Column(name = "id_address")
 	private Address address;
