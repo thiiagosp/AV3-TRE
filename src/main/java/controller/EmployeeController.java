@@ -29,7 +29,7 @@ public class EmployeeController {
 	public Employee Login(String pCodeRegistration, String pPassword){
 		
 		//valida se o usuário é válido ou não, se não é válido, retorna NULL
-		Employee employee = employeeDao.getEmployeeByCodeRegistrationAndPasword(pCodeRegistration, pPassword);
+		Employee employee = employeeDao.getEmployeeByCodeRegistrationAndPassword(pCodeRegistration, pPassword);
 		
 		//Se o Employee não é nulo, necessário verificar a session.
 		if(employee != null){

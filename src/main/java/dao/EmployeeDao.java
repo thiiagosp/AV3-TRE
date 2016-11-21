@@ -84,7 +84,7 @@ public class EmployeeDao {
 	 * <Date></Date>
 	 * <Description></Description>	
 	 */
-	public Employee getEmployeeByCodeRegistrationAndPasword(String pCodeRegistration, String pPassword){
+	public Employee getEmployeeByCodeRegistrationAndPassword(String pCodeRegistration, String pPassword){
 		
 		Employee employee = null;
 		
