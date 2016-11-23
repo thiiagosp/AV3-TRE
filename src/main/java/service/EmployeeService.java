@@ -24,7 +24,7 @@ public class EmployeeService{
 	
 	@GET
 	@Path("/login")
-	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	public Employee loginEmployee(List<String> CodeAndPassword){
 		System.out.println("entrou");
 		return employeeController.Login(CodeAndPassword.get(0), CodeAndPassword.get(1));

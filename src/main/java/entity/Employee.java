@@ -11,11 +11,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.annotations.Entity;
 
 @Entity
 @Table(name="employee")
+@XmlRootElement
 public class Employee {
 
 	@Id
